@@ -1,10 +1,12 @@
 // express boilerplate code 
 const express = require("express");
 const { createTodo, updateTodo } = require("./types");
+const cors = require("cors")
 const { todo } = require("./db");
 const app = express(); // Correct initialization
 
 app.use(express.json());
+app.use(cors());
 
 // body {
 // title: string

@@ -1,26 +1,28 @@
-import { useState } from "react";
+import { useState, memo } from "react";
+
+const ButtonComponent = memo(() => {
+  console.log("Child render");
+
+  return (
+    <div>
+      <button>Button clicked</button>
+    </div>
+  );
+});
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  const [inputValue, setInputValue] = useState(1);
+  const [count, setCount] = useState(0);
 
-  let count = 0;
-  for (let i = 1; i <= inputValue; i++) {
-    count = count + i;
-
+  function updateCount() {
+    setCount(count + 1);
   }
-// use effect 
 
-  return <div>
-    <input onChange={function (e) {
-      setInputValue(e.target.value);
-    }} placeholder={"Find sum from 1 to n"}></input>
-    <br />
-    Sum from 1 to {inputValue} is {count}
-    <br />
-    <button onClick={() => {
-      setCounter(counter + 1);
-    }}>Counter ({counter})</button>
-  </div>
+  return (
+    <div>
+      <ButtonComponent />
+      <button onClick={updateCount}>Click me({count})</button>
+    </div>
+  );
 }
+
 export default App;

@@ -1,26 +1,24 @@
 import { useState, memo } from "react";
 
-const ButtonComponent = memo(() => {
-  console.log("Child render");
+// const ButtonComponent = memo(() => {
+//   console.log("Child render");
 
-  return (
-    <div>
-      <button>Button clicked</button>
-    </div>
-  );
-});
+//   return (
+//     <div>
+//       <button>Button clicked</button>
+//     </div>
+//   );
+// });
 
 function App() {
   const [count, setCount] = useState(0);
 
-  function updateCount() {
-    setCount(count + 1);
-  }
 
   return (
     <div>
-      <ButtonComponent />
-      <button onClick={updateCount}>Click me({count})</button>
+      <button onClick={() => {
+        setCount((count + 1))
+      }}> Click me {count}</button>
     </div>
   );
 }

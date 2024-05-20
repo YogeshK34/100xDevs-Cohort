@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Assignment2 } from "./components/Factorial";
 
 export function Assignment1() {
   const inputRef = useRef(null);
@@ -14,6 +15,7 @@ export function Assignment1() {
   };
 
   return (
+
     <div>
       <input ref={inputRef} type="text" placeholder="Enter text here" />
       <button onClick={handleButtonClick}>Focus Input</button>

@@ -1,24 +1,28 @@
-import { useCallback, useEffect, useMemo, useState, memo, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-// understanding useRef()
-
-function App() {
-  const [incomeTax, setIncomeTax] = useState(20000);
-  const divRef = useRef();
+export function Assignment1() {
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log(divRef.current);
-      divRef.current.innerHTML = 10;
-    }, 5000);
-  }, [])
+    // Automatically focus the input field when the component mounts
+    inputRef.current.focus();
+  }, []);
+
+  const handleButtonClick = () => {
+    // Focus the input field when the button is clicked
+    inputRef.current.focus();
+  };
 
   return (
     <div>
-      hi there you're income tax returns are <div ref={divRef}>{incomeTax}</div>
+      <input ref={inputRef} type="text" placeholder="Enter text here" />
+      <button onClick={handleButtonClick}>Focus Input</button>
     </div>
-  )
+  );
 }
+
+export default Assignment1
+
 
 // useEffect(() => {
 //   // Some operation to get the data
@@ -77,4 +81,27 @@ function App() {
 //   </div>
 // })
 
-export default App
+// export default App
+
+
+// import { useEffect } from "react";
+
+// // Create a component with a text input field and a button. When the component mounts or the button is clicked, automatically focus the text input field using useRef.
+
+// export function Assignment1() {
+
+//     useEffect(() => {
+
+//     }, []);
+
+//     const handleButtonClick = () => {
+
+//     };
+
+//     return (
+//         <div>
+//             <input type="text" placeholder="Enter text here" />
+//             <button onClick={handleButtonClick}>Focus Input</button>
+//         </div>
+//     );
+// };

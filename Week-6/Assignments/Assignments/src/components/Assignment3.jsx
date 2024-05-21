@@ -10,9 +10,9 @@ export const Assignment3 = () => {
     ]);
 
     // Use useMemo to memoize the total value calculation
-   const totalValue = useMemo(() => {
-    return items.reduce((acc, item) => acc + item.value, 0)
-   },[])
+    const totalValue = useMemo(() => {
+        return items.reduce((acc, item) => acc + item.value, 0)
+    }, [items])
 
     return (
         <div>

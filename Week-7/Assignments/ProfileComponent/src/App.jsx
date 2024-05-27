@@ -4,8 +4,8 @@ import './App.css';
 function App() {
   const [bgColor, setBgColor] = useState('');
 
-  const handleColorChange = (color) => {
-    setBgColor(color);
+  const handleColorChange = (props) => {
+    setBgColor(props);
   };
 
   return (

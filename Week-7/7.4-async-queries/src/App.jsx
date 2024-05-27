@@ -18,7 +18,7 @@ function MainApp() {
   return (
     <>
       <button>Home</button>
-      
+
       <button>My network ({networkCount.networks >= 100 ? "99+" : networkCount.networks})</button>
       <button>Jobs {networkCount.jobs}</button>
       <button>Messaging ({networkCount.messaging})</button>
